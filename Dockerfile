@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . app.py /app/
 
 # Install packages from requirements.txt
-RUN pip install --upgrade pip &&\
-    pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --no-cache-dir 'pip<12' &&\
+    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
     
     
